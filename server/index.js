@@ -51,10 +51,18 @@ const limiter = rateLimit({
 app.use('/api/contact', limiter);
 
 // ── Routes ───────────────────────────────────────────────────────
+// Serve static frontend files for local Express server
+app.use(express.static(path.join(__dirname, '..')));
+
 app.use('/api', contactRouter);
 
 // ── Health check (for uptime monitors) ───────────────────────────
 app.get('/health', (_req, res) => res.json({ ok: true }));
+
+// Default route to index.html
+app.get('/', (_req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
 
 // ── 404 ──────────────────────────────────────────────────────────
 app.use((_req, res) => res.status(404).json({ ok: false, error: 'Not found' }));

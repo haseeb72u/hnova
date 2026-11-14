@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ── Primary SEO ───────────────────────────────── -->
+  <title>HNova | We automate businesses</title>
+  <meta name="description" content="HNova builds AI-powered workflow automations for businesses worldwide. Fixed-price, monitored, and fully handed over to you.">
+  <meta name="author" content="HNova">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hnova.tech/">
+
+  <!-- ── Theme color (mobile browser chrome) ──────── -->
+  <meta name="theme-color" content="#000000">
+
+  <!-- ── Open Graph ───────────────────────────────── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://hnova.tech/">
+  <meta property="og:site_name"   content="HNova">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:title"       content="HNova | We automate businesses">
+  <meta property="og:description" content="HNova builds AI-powered workflow automations for businesses worldwide. Fixed-price, monitored, and fully handed over to you.">
+  <meta property="og:image"       content="https://hnova.tech/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"   content="HNova – We automate businesses">
+
+  <!-- ── Twitter Card ─────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@hnova_tech">
+  <meta name="twitter:title"       content="HNova | We automate businesses">
+  <meta name="twitter:description" content="HNova builds AI-powered workflow automations for businesses worldwide.">
+  <meta name="twitter:image"       content="https://hnova.tech/og-image.png">
+  <meta name="twitter:image:alt"   content="HNova – We automate businesses">
+
+  <!-- ── Favicon ──────────────────────────────────── -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any"><!-- fallback; add favicon.ico when available -->
+
+  <!-- ── Fonts ─────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ── Styles ────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Skip-to-content (keyboard / screen-reader nav) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ── Scroll progress bar ── -->
+  <div class="prog" id="prog" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════ -->
+  <header>
+    <a class="brand" href="#main-content" aria-label="HNova – go to home">
+      <span class="logo" aria-hidden="true">H<b>Nova</b></span>
+      <i aria-hidden="true"></i>
+      <!-- Mini chart icon -->
+      <svg viewBox="0 0 30 30" fill="none" stroke="#000" stroke-width="3"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M4 25 10 8l9 13 6-14"/>
+        <circle cx="26" cy="4" r="1.6" fill="#000"/>
+      </svg>
+    </a>
+
+    <nav class="hnav" aria-label="Main navigation">
+      <a href="#services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3"  y="3"  width="7" height="7" rx="1.5"/>
+          <rect x="14" y="3"  width="7" height="7" rx="1.5"/>
+          <rect x="3"  y="14" width="7" height="7" rx="1.5"/>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+        </svg>
+        <span>Services</span>
+      </a>
+
+      <a href="#faq">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="9.5"/>
+          <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>
+        </svg>
+        <span>FAQ</span>
+      </a>
+
+      <a href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="9.5"/>
+          <circle cx="12" cy="10" r="3"/>
+          <path d="M6.5 18.5c1.2-2.2 3.3-3.2 5.5-3.2s4.3 1 5.5 3.2"/>
+        </svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════════
+       HERO  (the page's one-and-only h1)
+  ════════════════════════════════════════ -->
+  <main id="main-content">
+    <div class="wrap">
+      <div class="hero">
+        <h1>
+          <span style="animation-delay:.05s">We</span>
+          <span style="animation-delay:.18s">automate</span>
+          <span style="animation-delay:.31s">businesses.</span>
+        </h1>
+
+        <p class="sub">We automate your <span class="type" id="type" aria-live="polite" aria-atomic="true">lead replies</span></p>
+
+        <p class="d">
+          HNova builds AI-powered workflows that handle the repetitive work: replying to leads,
+          moving data between tools, and sending reports. Reliable, monitored, and fully handed over to you.
+        </p>
+
+        <div class="cta">
+          <a class="btn w" href="#contact">Book a Free Workflow Audit</a>
+          <a class="btn"   href="#work">See Demo Builds</a>
+        </div>
+
+        <!-- Trust strip -->
+        <ul class="trust" aria-label="Key guarantees">
+          <li>Fixed-price scope</li>
+          <li>Monitored after launch</li>
+          <li>You own everything</li>
+        </ul>
+
+        <!-- Stats -->
+        <div class="stats" role="list" aria-label="Key numbers">
+          <div role="listitem"><b data-n="24" data-s="h">24h</b><span>Reply to every message</span></div>
+          <div role="listitem"><b>1–4 wks</b><span>Typical build time</span></div>
+          <div role="listitem"><b data-n="100" data-s="%">100%</b><span>Ownership handed to you</span></div>
+        </div>
+      </div><!-- /.hero -->
+    </div><!-- /.wrap -->
+
+    <!-- Tools marquee -->
+    <div class="tools" aria-label="Technologies we use">
+      <small>BUILT WITH</small>
+      <div class="marq" aria-hidden="true"><!-- decorative, real list follows -->
+        <ul>
+          <li>n8n</li><li>Make</li><li>OpenAI</li><li>Node.js</li><li>React</li><li>MongoDB</li>
+          <li aria-hidden="true">n8n</li>
+          <li aria-hidden="true">Make</li>
+          <li aria-hidden="true">OpenAI</li>
+          <li aria-hidden="true">Node.js</li>
+          <li aria-hidden="true">React</li>
+          <li aria-hidden="true">MongoDB</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════════════════════════════════
+       DEMO BUILDS
+  ════════════════════════════════════════ -->
+  <section id="work" aria-labelledby="h2-work">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">DEMO BUILDS</span>
+      <h2 id="h2-work">Automations we build and run</h2>
+      <p class="lead">Working examples of our delivery. Real client case studies will replace these as projects complete.</p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag" aria-label="Status: Demo">DEMO</span>
+          <h3>Lead reply and CRM sync</h3>
+          <p>A form submission gets an AI-written reply, a CRM record, and a Slack alert with a lead score.</p>
+          <ul class="tags" aria-label="Technologies used">
+            <li>n8n</li><li>LLM</li><li>Sheets</li><li>Slack</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag" aria-label="Status: Demo">DEMO</span>
+          <h3>Support email triage</h3>
+          <p>Emails are sorted, answered from a knowledge base when safe, and escalated to a human when not.</p>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Make</li><li>LLM</li><li>Gmail</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag" aria-label="Status: Demo">DEMO</span>
+          <h3>Live operations dashboard</h3>
+          <p>A web dashboard showing leads, response times, and failed runs across every workflow.</p>
+          <ul class="tags" aria-label="Technologies used">
+            <li>React</li><li>Node</li><li>MongoDB</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       WHY HNOVA
+  ════════════════════════════════════════ -->
+  <section aria-labelledby="h2-why">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">WHY HNOVA</span>
+      <h2 id="h2-why">Automation that doesn't break quietly</h2>
+      <p class="lead">A workflow that works in a demo is easy. One that survives real customers, messy data, and API changes is the actual job.</p>
+
+      <div class="grid">
+        <div class="card"><h3>Reliability first</h3><p>Every workflow ships with error handling, retries, and alerts to you, not just the happy path.</p></div>
+        <div class="card"><h3>Code when tools run out</h3><p>No-code covers most cases. For the rest we write custom APIs and dashboards in Node and React.</p></div>
+        <div class="card"><h3>Clear business results</h3><p>We agree on one number up front, like hours saved or leads answered, and report on it.</p></div>
+        <div class="card"><h3>Your data stays yours</h3><p>Least-access permissions, NDA on request, and a clean handover of every account and credential.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       AI AGENTS (split layout)
+  ════════════════════════════════════════ -->
+  <section aria-labelledby="h2-ai">
+    <div class="wrap split">
+      <div>
+        <span class="pill" aria-hidden="true">AI AGENTS</span>
+        <h2 id="h2-ai">AI that follows rules</h2>
+        <p class="lead">Our AI steps read messages, decide what to do, and use your tools. Each one has limits, logs, and a human handoff.</p>
+      </div>
+
+      <pre aria-label="Pseudocode: example HNova workflow"><em># every HNova workflow, in short</em>
+<i>def</i> on_new_lead(msg):
+    reply = ai.draft(msg, brand_voice)
+    <i>if</i> reply.confidence &lt; 0.8:
+        <i>return</i> notify_human(msg)
+    send(reply)
+    crm.log(msg, reply)
+
+<i>def</i> on_error(step):
+    retry(step, times=3)
+    alert(owner, step)</pre>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════ -->
+  <section id="services" aria-labelledby="h2-services">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">SERVICES</span>
+      <h2 id="h2-services">What we build for you</h2>
+
+      <!-- Service types -->
+      <div class="grid">
+        <div class="card">
+          <h3>Workflow automation</h3>
+          <p>Connect your apps so data moves and tasks trigger without anyone copying and pasting.</p>
+          <ul class="tags" aria-label="Technologies used"><li>n8n</li><li>Make</li><li>Webhooks</li><li>Google Workspace</li></ul>
+        </div>
+        <div class="card">
+          <h3>AI assistants and agents</h3>
+          <p>Chat and email assistants that answer from your own documents and hand off to your team.</p>
+          <ul class="tags" aria-label="Technologies used"><li>LLM integration</li><li>Knowledge bases</li><li>RAG</li></ul>
+        </div>
+        <div class="card">
+          <h3>Custom apps and dashboards</h3>
+          <p>Admin panels, client portals, and live reports built as web apps when no-code isn't enough.</p>
+          <ul class="tags" aria-label="Technologies used"><li>React</li><li>Node</li><li>MongoDB</li><li>REST APIs</li></ul>
+        </div>
+      </div>
+
+      <!-- Industry use-cases -->
+      <div class="grid">
+        <div class="card"><h3>Real estate</h3><div class="vs"><span><b>Problem:</b> leads go cold before an agent replies.</span><span><b>Fix:</b> instant reply, qualification, and booking.</span></div></div>
+        <div class="card"><h3>E-commerce</h3><div class="vs"><span><b>Problem:</b> support inbox full of order questions.</span><span><b>Fix:</b> auto answers and order-status updates.</span></div></div>
+        <div class="card"><h3>Recruitment</h3><div class="vs"><span><b>Problem:</b> hours spent screening CVs.</span><span><b>Fix:</b> auto-screening and interview scheduling.</span></div></div>
+        <div class="card"><h3>Professional services</h3><div class="vs"><span><b>Problem:</b> manual invoices and client reports.</span><span><b>Fix:</b> generated, sent, and tracked for you.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PROCESS
+  ════════════════════════════════════════ -->
+  <section id="process" aria-labelledby="h2-process">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">PROCESS</span>
+      <h2 id="h2-process">How a project works</h2>
+
+      <ol class="proc">
+        <li><h3>Audit</h3>  <small>1 call</small>      <p>We find the tasks costing you the most hours.</p></li>
+        <li><h3>Plan</h3>   <small>2–3 days</small>    <p>Fixed scope, timeline, and price in writing.</p></li>
+        <li><h3>Build</h3>  <small>1–3 weeks</small>   <p>Built with real data and error handling from day one.</p></li>
+        <li><h3>Launch</h3> <small>3–5 days</small>    <p>Live trial with your team, then go-live and handover.</p></li>
+        <li><h3>Monitor</h3><small>Ongoing</small>      <p>Alerts, fixes, and improvements as you grow.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PRICING
+  ════════════════════════════════════════ -->
+  <section id="pricing" aria-labelledby="h2-pricing">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">PRICING</span>
+      <h2 id="h2-pricing">Simple, transparent pricing</h2>
+      <p class="lead">Starting prices. The final quote depends on your tools and volume, and is fixed before we start.</p>
+
+      <div class="grid">
+        <div class="card price">
+          <h3>Quick win</h3>
+          <div class="amt">From <span aria-label="300 US dollars">$300</span></div>
+          <p>One workflow that fixes one problem.</p>
+          <ul><li>Single automation</li><li>Error alerts</li><li>Short handover video</li></ul>
+        </div>
+
+        <div class="card price hl">
+          <h3>Workflow system</h3>
+          <div class="amt">From <span aria-label="1,200 US dollars">$1,200</span></div>
+          <p>A connected set of automations with AI.</p>
+          <ul><li>3–6 workflows</li><li>AI replies or triage</li><li>Dashboard and docs</li><li>30 days support</li></ul>
+        </div>
+
+        <div class="card price">
+          <h3>Care plan</h3>
+          <div class="amt">From <span aria-label="150 US dollars">$150</span> <small>/ month</small></div>
+          <p>We keep your automations healthy.</p>
+          <ul><li>Monitoring and fixes</li><li>Small changes each month</li><li>Monthly summary</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════ -->
+  <section id="faq" aria-labelledby="h2-faq">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">FAQ</span>
+      <h2 id="h2-faq">Questions we get asked</h2>
+
+      <div class="faq">
+        <details>
+          <summary>How long does a project take?</summary>
+          <p>A single workflow usually takes under a week. A connected system takes 2–4 weeks, depending on how many tools are involved.</p>
+        </details>
+        <details>
+          <summary>Which tools do you use?</summary>
+          <p>Mainly n8n and Make, with custom code in Node and React when needed. We pick whatever you can keep running at the lowest cost.</p>
+        </details>
+        <details>
+          <summary>Is my data safe?</summary>
+          <p>We ask for the least access needed, store credentials in secure vaults, and sign an NDA on request.</p>
+        </details>
+        <details>
+          <summary>What if something breaks after launch?</summary>
+          <p>Every workflow alerts us on failure. Projects include a support period, and care plans cover ongoing monitoring.</p>
+        </details>
+        <details>
+          <summary>Do I own what you build?</summary>
+          <p>Yes. You get the workflows, accounts, and documentation at handover.</p>
+        </details>
+        <details>
+          <summary>Which time zones do you work in?</summary>
+          <p>We're based in Pakistan and schedule calls in your working hours. Messages get a reply within 24 hours.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="h2-contact">
+    <div class="wrap">
+      <span class="pill" aria-hidden="true">CONTACT</span>
+      <h2 id="h2-contact">Tell us what eats your week</h2>
+      <p class="lead">Describe one task your team repeats every day. We'll reply with what can be automated and what it would take.</p>
+
+      <!--
+        data-endpoint: change to your deployed backend URL in production.
+        e.g. data-endpoint="https://api.hnova.tech/api/contact"
+        Falls back to mailto: if the endpoint is unreachable.
+      -->
+      <form class="form" id="contact-form" novalidate
+            data-endpoint="http://localhost:3001/api/contact">
+
+        <label for="n" class="sr-only">Your name</label>
+        <input id="n" name="name" placeholder="Your name" aria-label="Your name" autocomplete="name" required>
+
+        <label for="e" class="sr-only">Work email</label>
+        <input id="e" name="email" type="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+
+        <label for="t" class="sr-only">Project type</label>
+        <select id="t" name="type" aria-label="Project type">
+          <option value="workflow">Workflow automation</option>
+          <option value="ai">AI assistant or agent</option>
+          <option value="app">Custom app or dashboard</option>
+          <option value="unsure">Not sure yet</option>
+        </select>
+
+        <label for="d" class="sr-only">What task would you like to automate?</label>
+        <textarea id="d" name="details" placeholder="What task would you like to automate?" aria-label="Details" rows="5"></textarea>
+
+        <!-- Honeypot: hidden from real users, bots fill it in -->
+        <label for="hp" class="sr-only" aria-hidden="true">Leave this field empty</label>
+        <input id="hp" name="website" type="text" autocomplete="off"
+               tabindex="-1" aria-hidden="true" class="hp-field">
+
+        <!-- Status message (success / error) -->
+        <div id="form-status" class="form-status" role="alert" aria-live="polite" hidden></div>
+
+        <button class="btn w" id="go" type="submit">Get My Free Audit</button>
+        <p style="text-align:center;color:var(--muted);font-size:.85rem;font-weight:600;margin:0">Reply within 24 hours. NDA on request.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer>
+    <div class="wrap">
+      <span>© 2026 HNova. All rights reserved.</span>
+      <nav aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Demos</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:hello@hnova.tech">hello@hnova.tech</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a class="top" href="#main-content" aria-label="Back to top">↑</a>
+
+  <!-- ── JSON-LD: Organization schema ───────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HNova",
+    "url": "https://hnova.tech/",
+    "logo": "https://hnova.tech/favicon.svg",
+    "description": "HNova builds AI-powered workflow automations for businesses worldwide. Fixed-price, monitored, and fully handed over to you.",
+    "email": "hello@hnova.tech",
+    "foundingDate": "2026",
+    "areaServed": "Worldwide",
+    "knowsAbout": ["Workflow Automation", "AI Agents", "n8n", "Make", "No-Code Automation"],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Quick Win",
+        "description": "Single workflow automation that fixes one problem.",
+        "price": "300",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Workflow System",
+        "description": "A connected set of automations with AI replies or triage.",
+        "price": "1200",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Care Plan",
+        "description": "Monthly monitoring, fixes, and improvements for your automations.",
+        "price": "150",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "150",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
+        }
+      }
+    ],
+    "sameAs": [
+      "https://twitter.com/hnova_tech"
+    ]
+  }
+  </script>
+
+  <!-- ── Main script ─────────────────────────────────── -->
+  <script src="js/main.js"></script>
+</body>
+</html>

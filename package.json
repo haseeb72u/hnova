@@ -1,0 +1,9 @@
+{
+  "name": "hnova-marketing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HNova marketing site and contact serverless endpoint",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

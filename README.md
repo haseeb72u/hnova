@@ -92,26 +92,30 @@ FORM_API_KEY=your_key_here
 
 ## Deployment
 
-### Netlify (recommended — free tier covers this)
+### Vercel (Recommended — runs frontend & contact API in one place)
 
-1. Push the repo to GitHub (or GitLab / Bitbucket).
-2. Log in to [netlify.com](https://netlify.com) → **Add new site → Import an existing project**.
-3. Select the repo.
-4. Settings:
-   - **Build command:** *(leave blank — no build step)*
-   - **Publish directory:** `.`
-5. Click **Deploy site**.
-6. Add your domain: **Domain management → Add custom domain → `hnova.tech`**.
-7. Enable **Force HTTPS** (Netlify auto-provisions a Let's Encrypt certificate).
-
-### Vercel (alternative)
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-Follow the prompts. Add `hnova.tech` in the Vercel dashboard under **Domains**.
+1. Push your repo to GitHub:
+   ```bash
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+   git push -u origin main
+   ```
+2. Log in to [vercel.com](https://vercel.com) → **Add New... → Project**.
+3. Import your GitHub repository.
+4. In **Environment Variables**, add the settings from your `.env`:
+   - `SMTP_HOST`: `smtp.gmail.com`
+   - `SMTP_PORT`: `587`
+   - `SMTP_SECURE`: `false`
+   - `SMTP_USER`: `hnova.tech2026@gmail.com`
+   - `SMTP_PASS`: `your-16-char-app-password`
+   - `MAIL_TO`: `hnova.tech2026@gmail.com`
+5. Click **Deploy**.
+6. **Connect your domain `hnova.tech` (from get.tech)**:
+   - In Vercel, go to **Settings → Domains** and add `hnova.tech` and `www.hnova.tech`.
+   - In your **get.tech DNS Management**, add:
+     - **A Record**: `@` → `76.76.21.21`
+     - **CNAME Record**: `www` → `cname.vercel-dns.com`
+   - Vercel will automatically provision your SSL certificate within minutes.
 
 ### GitHub Pages (zero-cost, simplest)
 

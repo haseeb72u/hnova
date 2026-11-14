@@ -1,18 +1,29 @@
 'use strict';
 
-const path    = require('path');
-// Load .env from the project root (one level above server/)
-require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+const path   = require('path');
+const fs     = require('fs');
 
-const express     = require('express');
-const cors        = require('cors');
-const rateLimit   = require('express-rate-limit');
+// Load .env from server/ or parent
+if (fs.existsSync(path.join(__dirname, '.env'))) {
+  require('dotenv').config({ path: path.join(__dirname, '.env') });
+} else {
+  require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+}
+
+const express       = require('express');
+const cors          = require('cors');
+const rateLimit     = require('express-rate-limit');
 const contactRouter = require('./routes/contact');
 
 const app  = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-// ── Trust proxy (Heroku / Railway / Render add X-Forwarded-For) ──
+// Determine public directory (self-contained public/ or parent directory)
+const publicDir = fs.existsSync(path.join(__dirname, 'public'))
+  ? path.join(__dirname, 'public')
+  : path.join(__dirname, '..');
+
+// ── Trust proxy ──
 app.set('trust proxy', 1);
 
 // ── CORS ──────────────────────────────────────────────────────────
@@ -22,52 +33,68 @@ const allowedOrigins = (process.env.ALLOWED_ORIGIN || 'http://localhost:3000')
 
 app.use(cors({
   origin: function (origin, cb) {
-    // Allow server-to-server requests (no Origin header) and listed origins
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-    cb(Object.assign(new Error('Not allowed by CORS'), { status: 403 }));
+    if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes('*')) return cb(null, true);
+    cb(null, true); // Allow same-origin and flexible access
   },
-  methods: ['POST', 'OPTIONS'],
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
 }));
 
-// ── Body parsing (hard cap at 20 KB to prevent abuse) ─────────────
+// ── Static assets ─────────────────────────────────────────────────
+app.use(express.static(publicDir));
+
+// ── Body parsing ──────────────────────────────────────────────────
 app.use(express.json({ limit: '20kb' }));
 app.use(express.urlencoded({ extended: true, limit: '20kb' }));
 
-// ── Rate limiter: 5 submissions per IP per 15 minutes ────────────
+// ── Rate limiter ──────────────────────────────────────────────────
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 5,
+  max: 10,
   standardHeaders: true,
   legacyHeaders: false,
   handler: (_req, res) => {
     res.status(429).json({
       ok: false,
-      error: 'Too many submissions from this IP. Please wait 15 minutes and try again.',
+      error: 'Too many submissions. Please wait 15 minutes and try again.',
     });
   },
 });
 
 app.use('/api/contact', limiter);
-
-// ── Routes ───────────────────────────────────────────────────────
-// Serve static frontend files for local Express server
-app.use(express.static(path.join(__dirname, '..')));
-
 app.use('/api', contactRouter);
 
-// ── Health check (for uptime monitors) ───────────────────────────
+// ── Health check ──────────────────────────────────────────────────
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
-// Default route to index.html
+// ── Frontend routes ───────────────────────────────────────────────
 app.get('/', (_req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.sendFile(path.join(publicDir, 'index.html'));
 });
 
-// ── 404 ──────────────────────────────────────────────────────────
-app.use((_req, res) => res.status(404).json({ ok: false, error: 'Not found' }));
+app.get('/privacy-policy', (_req, res) => {
+  res.sendFile(path.join(publicDir, 'privacy-policy.html'));
+});
 
-// ── Global error handler ─────────────────────────────────────────
+app.get('/terms', (_req, res) => {
+  res.sendFile(path.join(publicDir, 'terms.html'));
+});
+
+// Fallback for HTML or missing files
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  const directPath = path.join(publicDir, req.path);
+  if (fs.existsSync(directPath) && fs.statSync(directPath).isFile()) {
+    return res.sendFile(directPath);
+  }
+  const htmlPath = path.join(publicDir, `${req.path}.html`);
+  if (fs.existsSync(htmlPath)) {
+    return res.sendFile(htmlPath);
+  }
+  res.sendFile(path.join(publicDir, 'index.html'));
+});
+
+// ── Global error handler ──────────────────────────────────────────
 // eslint-disable-next-line no-unused-vars
 app.use((err, _req, res, _next) => {
   console.error('[server]', err.message || err);
@@ -75,9 +102,8 @@ app.use((err, _req, res, _next) => {
   res.status(status).json({ ok: false, error: err.message || 'Server error' });
 });
 
-// ── Start ────────────────────────────────────────────────────────
+// ── Start ─────────────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`HNova contact server → http://localhost:${PORT}`);
-  console.log(`  MAIL_TO   : ${process.env.MAIL_TO   || '(not set)'}`);
-  console.log(`  SMTP_HOST : ${process.env.SMTP_HOST || '(not set)'}`);
+  console.log(`HNova server running on port ${PORT}`);
+  console.log(`Serving static files from: ${publicDir}`);
 });
